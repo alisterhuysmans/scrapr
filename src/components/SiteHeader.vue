@@ -3,6 +3,7 @@
     <nav>
       <router-link to="/">Home</router-link>
       <router-link to="/users">Users</router-link>
+      <router-link to="/leaderboard">Leaderboard</router-link>
     </nav>
   </header>
 </template>

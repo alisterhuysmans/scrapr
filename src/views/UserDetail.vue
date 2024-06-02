@@ -11,20 +11,24 @@
       <UserStatsChart v-if="stats" type="line" label="Following" :data="stats.following_count"></UserStatsChart>
       <UserStatsChart v-if="stats" type="line" label="Posts" :data="stats.posts_count"></UserStatsChart>
     </div>
-  </div>
+    <!-- Inclure le composant HistoryCard -->
+    <history-card v-if="user" :username="user.username"></history-card>
+    </div>
 </template>
 
 <script>
 import UserAvatar from '../components/UserAvatar.vue';
 import UserInfo from '../components/UserInfo.vue';
 import UserStatsChart from '../components/UserStatsChart.vue';
+import HistoryCard from '@/components/HistoryCard.vue';
 
 export default {
   name: 'UserDetail',
   components: {
     UserAvatar,
     UserInfo,
-    UserStatsChart
+    UserStatsChart,
+    HistoryCard
   },
   data() {
     return {
