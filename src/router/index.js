@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/HomePage.vue'
 import UsersPage from '../views/UsersPage.vue'
 import UserDetail from '../views/UserDetail.vue'
+import UserLeaderboard from '@/views/UserLeaderboard.vue'
 
 const routes = [
   {
@@ -19,7 +20,12 @@ const routes = [
     path: '/users/:username',
     name: 'UserDetail',
     component: UserDetail
-  }
+  },
+  {
+    path: '/leaderboard',
+    name: 'UserLeaderboard',
+    component: UserLeaderboard, 
+  },
 ]
 
 const router = createRouter({
