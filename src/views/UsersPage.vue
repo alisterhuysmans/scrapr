@@ -1,11 +1,11 @@
-<!-- src/views/UsersPage.vue -->
 <template>
   <div>
     <h1>Users</h1>
+    <UserSearchBar @search="handleSearch" />
     <div v-if="loading">Loading...</div>
     <div v-else class="user-cards">
       <UserCard
-        v-for="user in users"
+        v-for="user in filteredUsers"
         :key="user.username"
         :avatar="'https://scrapifier.com/photoprofile/' + user.avatar"
         :fullname="user.fullname"
@@ -16,25 +16,35 @@
       />
     </div>
   </div>
- 
 </template>
 
 <script>
 import UserCard from '../components/Card.vue'
+import UserSearchBar from '../components/UserSearchBar.vue'
 
 export default {
   name: 'UsersPage',
   components: {
-    UserCard
+    UserCard,
+    UserSearchBar
   },
   data() {
     return {
       users: [],
-      loading: true
+      loading: true,
+      searchQuery: ''
     }
   },
   created() {
     this.fetchUsers();
+  },
+  computed: {
+    filteredUsers() {
+      const filter = this.searchQuery.toLowerCase().trim();
+      return this.users.filter(user => {
+        return user.username.toLowerCase().includes(filter) || user.fullname.toLowerCase().includes(filter);
+      });
+    }
   },
   methods: {
     async fetchUsers() {
@@ -46,6 +56,9 @@ export default {
       } finally {
         this.loading = false;
       }
+    },
+    handleSearch(query) {
+      this.searchQuery = query;
     }
   }
 }
