@@ -50,5 +50,4 @@ export default {
 </script>
 
 <style scoped>
-/* Add your styling for the user profile */
 </style>

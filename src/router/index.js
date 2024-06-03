@@ -3,7 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/HomePage.vue'
 import UsersPage from '../views/UsersPage.vue'
 import UserDetail from '../views/UserDetail.vue'
-import UserLeaderboard from '@/views/UserLeaderboard.vue'
+import UserLeaderboard from '../views/UserLeaderboard.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     path: '/leaderboard',
     name: 'UserLeaderboard',
     component: UserLeaderboard, 
+  },
+  {
+    path: '/:catchAll(.*)*',
+    name: 'NotFound',
+    component: NotFound,
   },
 ]
 

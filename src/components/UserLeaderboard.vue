@@ -46,7 +46,7 @@
             if (dates.length < 2) {
               return {
                 username: user.username,
-                growth: 0, // Assumer aucune croissance si les données sont insuffisantes
+                growth: 0,
               };
             }
             
@@ -63,6 +63,7 @@
           this.leaderboard = leaderboard.sort((a, b) => b.growth - a.growth);
         } catch (error) {
           console.error('Erreur lors de la récupération du leaderboard:', error);
+          this.$router.push({ name: 'NotFound' });
         }
       },
     },
