@@ -53,6 +53,7 @@ export default {
         this.users = await response.json();
       } catch (error) {
         console.error('Error fetching users:', error);
+        this.$router.push({ name: 'NotFound' });
       } finally {
         this.loading = false;
       }

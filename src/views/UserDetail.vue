@@ -56,9 +56,11 @@ export default {
         this.user = usersData.find(user => user.username === this.username);
         if (!this.user) {
           console.error('User not found');
+          this.$router.push({ name: 'NotFound' });
         }
       } catch (error) {
         console.error('Error fetching user:', error);
+        this.$router.push({ name: 'NotFound' });
       } finally {
         this.loading = false;
       }
@@ -86,6 +88,7 @@ export default {
         this.calculateFollowerGrowth(stats.followers_count);
       } catch (error) {
         console.error('Error fetching user stats:', error);
+        this.$router.push({ name: 'NotFound' });
       }
     },
     calculateFollowerGrowth(totalFollowers) {
