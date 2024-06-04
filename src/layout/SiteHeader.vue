@@ -1,8 +1,11 @@
 <template>
     <header>
-        <nav>
-            <router-link to="/">Home</router-link>
-            <router-link to="/users">Users</router-link>
+        <div class="logo">
+            <a href="/"><img src="../assets/images/logo.png" alt="Logo" /></a>
+        </div>
+        <nav class="nav-links">
+            <router-link to="/">Accueil</router-link>
+            <router-link to="/users">Utilisateurs</router-link>
             <router-link to="/leaderboard">Leaderboard</router-link>
         </nav>
     </header>
@@ -16,13 +19,13 @@ export default {
 
 <style scoped>
 header {
-    /* background: #333;
-  color: white;
-  padding: 1rem; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
 }
-nav a {
-    /* margin-right: 1rem;
-  color: white;
-  text-decoration: none; */
+
+.nav-links a {
+    font-size: 1.8rem;
 }
 </style>

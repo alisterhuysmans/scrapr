@@ -1,6 +1,8 @@
 <template>
     <SiteHeader />
-    <RouterView />
+    <main>
+        <RouterView className="content" />
+    </main>
     <SiteFooter />
 </template>
 
@@ -38,14 +40,29 @@ export default {
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Bebas Neue";
+    src: url("./assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf")
+        format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
 :root {
+    --primary-color: #903749;
+    --background-color: #1c1c1c;
+    --white-color: #fff;
+    --light-color: #b9bbbe;
+    --dark-color: #141414;
+    --body-fonts: "Roboto", "Arial", sans-serif;
+    --line-height: 1.5;
+}
+
+html,
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --primary-color: #1c1c1c;
-    --light-color: #fff;
-    --body-fonts: "Roboto", "Arial", sans-serif;
-    --line-height: 1.5;
 }
 
 html {
@@ -56,12 +73,58 @@ body {
     font-family: var(--body-fonts);
     font-size: 1.6rem;
     color: var(--light-color);
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
+}
+
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
 }
 
 #app {
+    display: flex;
+    flex-direction: column;
     max-width: 1300px;
+    min-height: 100vh;
     padding: 0 20px;
     margin: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--light-color);
+}
+
+main {
+    flex: 1;
+    padding: 5rem 0;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.nav-links a:hover {
+    filter: brightness(1.5);
+}
+
+.page-title {
+    text-align: center;
+}
+
+.btn {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    padding: 1.2rem;
+    text-decoration: none;
+    border-radius: 15px;
 }
 </style>

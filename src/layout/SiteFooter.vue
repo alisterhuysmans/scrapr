@@ -1,6 +1,11 @@
 <template>
     <footer>
-        <p>© 2024 My Vue Project</p>
+        <p>© 2024 Scrapr. All rights reserved.</p>
+        <nav class="nav-links">
+            <a href="#">Documentation</a>
+            <a href="#">Politique de confidentalité</a>
+            <a href="#">Contactez-nous</a>
+        </nav>
     </footer>
 </template>
 
@@ -12,11 +17,10 @@ export default {
 
 <style scoped>
 footer {
-    /* background: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  width: 100%;
-  bottom: 0; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    font-size: 1.4rem;
 }
 </style>
