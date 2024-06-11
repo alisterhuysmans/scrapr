@@ -28,4 +28,11 @@ header {
 .nav-links a {
     font-size: 1.8rem;
 }
+
+@media (max-width: 468px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
 </style>

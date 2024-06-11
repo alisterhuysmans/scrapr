@@ -23,4 +23,11 @@ footer {
     padding: 1rem 0;
     font-size: 1.4rem;
 }
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
 </style>
