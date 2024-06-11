@@ -4,7 +4,7 @@
             type="text"
             v-model="searchQuery"
             @input="emitSearchQuery"
-            placeholder="Search users..."
+            placeholder="Rechercher des utilisateurs..."
         />
     </div>
 </template>
@@ -26,13 +26,21 @@ export default {
 
 <style scoped>
 .search-bar {
-    margin-bottom: 20px;
+    margin-bottom: 4rem;
 }
-input[type="text"] {
-    /* width: 100%; */
+.search-bar input {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #585454;
+    background-color: #0f0f0f;
     border-radius: 5px;
+    width: 22rem;
+    color: var(--light-color);
     font-size: 16px;
+}
+
+@media (max-width: 468px) {
+    .search-bar input {
+        width: -webkit-fill-available;
+    }
 }
 </style>

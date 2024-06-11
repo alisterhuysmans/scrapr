@@ -71,6 +71,7 @@ export default {
 </script>
 
 <style scoped>
+
 .user-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));

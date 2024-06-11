@@ -76,6 +76,8 @@ body {
     background-color: var(--background-color);
 }
 
+h1,
+h2,
 h3,
 h4,
 h5,
@@ -118,6 +120,7 @@ a {
 
 .page-title {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .btn {
